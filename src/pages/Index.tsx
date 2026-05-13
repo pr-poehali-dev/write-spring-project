@@ -201,77 +201,90 @@ export default function Index() {
         </div>
       </section>
 
-      {/* POEMS */}
+      {/* POEMS + BIBLIOGRAPHY combined */}
       <section id="poems" className="py-24 md:py-32" style={{ backgroundColor: "var(--parchment)" }}>
-        <div className="max-w-5xl mx-auto px-6">
+        <div id="bibliography" className="max-w-7xl mx-auto px-6">
+
+          {/* Section header */}
           <div className="mb-16 text-center">
-            <span className="section-label block mb-4">Избранные произведения</span>
-            <h2 className="font-display text-5xl md:text-6xl font-light" style={{ color: "var(--charcoal)" }}>Стихи</h2>
+            <span className="section-label block mb-4">Творчество</span>
+            <h2 className="font-display text-5xl md:text-6xl font-light" style={{ color: "var(--charcoal)" }}>Стихи &amp; Книги</h2>
             <span className="gold-line mx-auto mt-6 block" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {POEMS.map((poem, i) => (
-              <div
-                key={i}
-                className="poem-card cursor-pointer group"
-                onClick={() => setSelectedPoem(selectedPoem === i ? null : i)}
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span className="font-caps text-xs tracking-widest" style={{ color: "var(--gold)" }}>{poem.year}</span>
-                  <span className="font-body text-xs" style={{ color: "var(--warm-gray)" }}>{poem.collection}</span>
-                </div>
-                <h3 className="font-display text-2xl font-light mb-4 group-hover:text-gold transition-colors" style={{ color: "var(--charcoal)" }}>
-                  {poem.title}
-                </h3>
-                <div
-                  className="overflow-hidden transition-all duration-500"
-                  style={{ maxHeight: selectedPoem === i ? "200px" : "80px" }}
-                >
-                  <p className="font-body text-sm leading-7 whitespace-pre-line" style={{ color: "var(--warm-gray)" }}>
-                    {poem.excerpt}
-                  </p>
-                </div>
-                <button className="mt-4 font-caps text-xs tracking-widest flex items-center gap-2 transition-colors" style={{ color: "var(--gold)" }}>
-                  {selectedPoem === i ? "СВЕРНУТЬ" : "ЧИТАТЬ ПОЛНОСТЬЮ"}
-                  <Icon name={selectedPoem === i ? "ChevronUp" : "ChevronDown"} size={12} />
-                </button>
+          {/* Two-column layout */}
+          <div className="grid lg:grid-cols-2 gap-0" style={{ border: "1px solid var(--border)" }}>
+
+            {/* LEFT — Стихи */}
+            <div className="p-8 md:p-12" style={{ borderRight: "1px solid var(--border)", backgroundColor: "var(--ivory)" }}>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-3xl font-light" style={{ color: "var(--charcoal)" }}>Стихи</span>
+                <span className="gold-line block" />
+                <span className="section-label">Избранное</span>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-16 text-center">
-            <button className="btn-gold">Все стихотворения</button>
-          </div>
-        </div>
-      </section>
-
-      {/* BIBLIOGRAPHY */}
-      <section id="bibliography" className="py-24 md:py-32" style={{ backgroundColor: "var(--ivory)" }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="mb-16 text-center">
-            <span className="section-label block mb-4">Книги и публикации</span>
-            <h2 className="font-display text-5xl md:text-6xl font-light" style={{ color: "var(--charcoal)" }}>Библиография</h2>
-            <span className="gold-line mx-auto mt-6 block" />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-px" style={{ border: "1px solid var(--border)" }}>
-            {BOOKS.map((book, i) => (
-              <div key={i} className="p-8 group hover:bg-parchment transition-colors" style={{ borderRight: i % 2 === 0 ? "1px solid var(--border)" : undefined, borderBottom: i < 2 ? "1px solid var(--border)" : undefined, backgroundColor: "var(--ivory)" }}>
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <span className="section-label block mb-1">{book.year} · {book.genre}</span>
-                    <h3 className="font-display text-3xl font-light" style={{ color: "var(--charcoal)" }}>{book.title}</h3>
+              <div className="space-y-8">
+                {POEMS.map((poem, i) => (
+                  <div
+                    key={i}
+                    className="poem-card cursor-pointer group"
+                    onClick={() => setSelectedPoem(selectedPoem === i ? null : i)}
+                  >
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-caps text-xs tracking-widest" style={{ color: "var(--gold)" }}>{poem.year}</span>
+                      <span className="font-body text-xs" style={{ color: "var(--warm-gray)" }}>{poem.collection}</span>
+                    </div>
+                    <h3 className="font-display text-2xl font-light mb-3" style={{ color: "var(--charcoal)" }}>
+                      {poem.title}
+                    </h3>
+                    <div
+                      className="overflow-hidden transition-all duration-500"
+                      style={{ maxHeight: selectedPoem === i ? "200px" : "60px" }}
+                    >
+                      <p className="font-body text-sm leading-7 whitespace-pre-line" style={{ color: "var(--warm-gray)" }}>
+                        {poem.excerpt}
+                      </p>
+                    </div>
+                    <button className="mt-3 font-caps text-xs tracking-widest flex items-center gap-2 transition-colors" style={{ color: "var(--gold)" }}>
+                      {selectedPoem === i ? "СВЕРНУТЬ" : "ЧИТАТЬ ПОЛНОСТЬЮ"}
+                      <Icon name={selectedPoem === i ? "ChevronUp" : "ChevronDown"} size={12} />
+                    </button>
                   </div>
-                  <span className="font-body text-xs mt-2" style={{ color: "var(--warm-gray)" }}>{book.pages}</span>
-                </div>
-                <span className="gold-line mb-4 block" />
-                <p className="font-body text-sm leading-7" style={{ color: "var(--warm-gray)" }}>{book.desc}</p>
-                <button className="mt-6 font-caps text-xs tracking-widest flex items-center gap-2 transition-all group-hover:gap-3" style={{ color: "var(--gold)" }}>
-                  ПОДРОБНЕЕ <Icon name="ArrowRight" size={12} />
-                </button>
+                ))}
               </div>
-            ))}
+
+              <div className="mt-10">
+                <button className="btn-gold">Все стихотворения</button>
+              </div>
+            </div>
+
+            {/* RIGHT — Книги */}
+            <div className="p-8 md:p-12" style={{ backgroundColor: "var(--parchment)" }}>
+              <div className="flex items-center gap-4 mb-10">
+                <span className="font-display text-3xl font-light" style={{ color: "var(--charcoal)" }}>Книги</span>
+                <span className="gold-line block" />
+                <span className="section-label">Библиография</span>
+              </div>
+
+              <div className="space-y-0">
+                {BOOKS.map((book, i) => (
+                  <div key={i} className="group py-6 cursor-pointer" style={{ borderBottom: "1px solid var(--border)" }}>
+                    <div className="flex items-start justify-between mb-2">
+                      <div>
+                        <span className="section-label block mb-1">{book.year} · {book.genre}</span>
+                        <h3 className="font-display text-2xl font-light" style={{ color: "var(--charcoal)" }}>{book.title}</h3>
+                      </div>
+                      <span className="font-body text-xs mt-1 flex-shrink-0 ml-4" style={{ color: "var(--warm-gray)" }}>{book.pages}</span>
+                    </div>
+                    <p className="font-body text-sm leading-6 mt-2" style={{ color: "var(--warm-gray)" }}>{book.desc}</p>
+                    <button className="mt-3 font-caps text-xs tracking-widest flex items-center gap-2 transition-all group-hover:gap-3" style={{ color: "var(--gold)" }}>
+                      ПОДРОБНЕЕ <Icon name="ArrowRight" size={12} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
