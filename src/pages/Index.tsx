@@ -283,6 +283,10 @@ export default function Index() {
                   </div>
                 ))}
               </div>
+
+              <div className="mt-10">
+                <button className="btn-gold">Все книги</button>
+              </div>
             </div>
 
           </div>
