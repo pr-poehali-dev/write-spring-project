@@ -122,7 +122,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <button onClick={() => scrollTo("home")} className="flex flex-col items-start group">
             <span className="font-caps text-xs tracking-widest" style={{ color: "var(--gold)" }}>ЛИТЕРАТУРНЫЙ САЙТ</span>
-            <span className="font-display text-xl font-light" style={{ color: "var(--charcoal)" }}>Имя Автора</span>
+            <span className="font-display text-xl font-light" style={{ color: "var(--charcoal)" }}>Алёна Сницар</span>
           </button>
 
           {/* Desktop nav */}
@@ -170,8 +170,8 @@ export default function Index() {
 
           <div className="animate-fade-up opacity-0 delay-200" style={{ animationFillMode: "forwards" }}>
             <h1 className="font-display text-7xl md:text-9xl font-light leading-none mb-6" style={{ color: "var(--charcoal)", letterSpacing: "-0.02em" }}>
-              Имя<br />
-              <span style={{ color: "var(--gold)" }}>Автора</span>
+              Алёна<br />
+              <span style={{ color: "var(--gold)" }}>Сницар</span>
             </h1>
           </div>
 
@@ -383,13 +383,13 @@ export default function Index() {
               <span className="gold-line mb-8 block" />
               <div className="space-y-5 font-body text-base leading-8" style={{ color: "var(--warm-gray)" }}>
                 <p>
-                  Родился в 1978 году. Поэт, прозаик, эссеист. Автор четырёх книг стихотворений и одной повести.
+                  Алёна Сницар — поэт, автор лирических стихотворений о любви, времени и внутреннем мире человека.
                 </p>
                 <p>
-                  Публиковался в журналах «Новый мир», «Знамя», «Октябрь». Лауреат литературных премий. Живёт и работает в Санкт-Петербурге.
+                  Живёт и творит в Москве. Пишет о том, что невозможно замолчать — о чувствах, которые ищут своё слово.
                 </p>
                 <p>
-                  «Я пишу, чтобы понять — что случилось, что происходит и что могло бы быть. Поэзия — это не украшение, а необходимость.»
+                  «Стихи — это способ услышать себя и быть услышанной другими.»
                 </p>
               </div>
               <div className="mt-10 flex gap-6">
@@ -398,19 +398,18 @@ export default function Index() {
             </div>
 
             <div className="relative">
-              {/* Portrait placeholder */}
               <div
                 className="relative overflow-hidden"
                 style={{
                   aspectRatio: "3/4",
-                  backgroundColor: "var(--parchment)",
                   border: "1px solid var(--border)",
                 }}
               >
-                <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ color: "var(--warm-gray)" }}>
-                  <Icon name="User" size={64} style={{ color: "var(--gold-light)" }} />
-                  <span className="font-caps text-xs tracking-widest mt-4" style={{ color: "var(--gold)" }}>ФОТО АВТОРА</span>
-                </div>
+                <img
+                  src="https://cdn.poehali.dev/projects/8f554d3c-f975-4e62-8f28-f4bacf0a62b5/bucket/67bf2111-f983-4bca-b26b-0316bdd38847.png"
+                  alt="Алёна Сницар"
+                  className="w-full h-full object-cover object-top"
+                />
                 {/* Gold corner accents */}
                 <div className="absolute top-4 left-4 w-8 h-8" style={{ borderTop: "1px solid var(--gold)", borderLeft: "1px solid var(--gold)" }} />
                 <div className="absolute top-4 right-4 w-8 h-8" style={{ borderTop: "1px solid var(--gold)", borderRight: "1px solid var(--gold)" }} />
@@ -457,15 +456,15 @@ export default function Index() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <Icon name="Mail" size={18} style={{ color: "var(--gold)" }} />
-                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>author@example.com</span>
+                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>Brenok@mail.ru</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Icon name="MapPin" size={18} style={{ color: "var(--gold)" }} />
-                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>Санкт-Петербург, Россия</span>
+                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>Москва, Россия</span>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Icon name="Globe" size={18} style={{ color: "var(--gold)" }} />
-                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>@author_name</span>
+                  <Icon name="AtSign" size={18} style={{ color: "var(--gold)" }} />
+                  <span className="font-body text-sm" style={{ color: "var(--charcoal)" }}>@AlenaSnicar</span>
                 </div>
               </div>
             </div>
@@ -513,7 +512,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <span className="font-caps text-xs tracking-widest block mb-1" style={{ color: "var(--gold)" }}>ЛИТЕРАТУРНЫЙ САЙТ</span>
-              <span className="font-display text-2xl font-light" style={{ color: "var(--ivory)" }}>Имя Автора</span>
+              <span className="font-display text-2xl font-light" style={{ color: "var(--ivory)" }}>Алёна Сницар</span>
             </div>
 
             <span className="gold-line-full hidden md:block flex-1 mx-8" />
@@ -529,7 +528,7 @@ export default function Index() {
 
           <div className="mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3" style={{ borderTop: "1px solid rgba(184,150,106,0.15)" }}>
             <span className="font-body text-xs" style={{ color: "rgba(245,240,232,0.3)" }}>
-              © 2026 Имя Автора. Все права защищены.
+              © 2026 Алёна Сницар. Все права защищены.
             </span>
             <span className="ornament text-sm" style={{ color: "var(--gold)", opacity: 0.5 }}>✦ ✦ ✦</span>
           </div>
