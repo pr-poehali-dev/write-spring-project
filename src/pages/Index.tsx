@@ -187,7 +187,8 @@ export default function Index() {
 
           <div className="animate-fade-up opacity-0 delay-700" style={{ animationFillMode: "forwards" }}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-dark" onClick={() => scrollTo("poems")}>Читать стихи</button>
+              <button className="btn-dark" onClick={() => scrollTo("poems")}>Стихи</button>
+              <button className="btn-gold" onClick={() => scrollTo("bibliography")}>Книги</button>
               <button className="btn-gold" onClick={() => scrollTo("about")}>Об авторе</button>
             </div>
           </div>
